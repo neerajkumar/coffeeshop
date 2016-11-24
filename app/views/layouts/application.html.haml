@@ -1,0 +1,7 @@
+%html
+  %head
+    = render '/layouts/head'
+  %body
+    #main.container
+      = yield
+    = javascript_include_tag 'application'

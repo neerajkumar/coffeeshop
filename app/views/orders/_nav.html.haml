@@ -1,0 +1,14 @@
+- unless defined?(active)
+  - active = 0
+
+%nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      %a.navbar-brand{:href => root_path}
+        =image_tag "logo.png"
+    .navbar-collapse
+      %ul.nav.navbar-nav
+        %li{ class: (active == 0 ? 'active' : nil) }
+          %a{:href => root_path}
+            %i.fa.fa-home
+            %span Home
