@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160223095731) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "drinks", force: true do |t|
     t.string   "name"
     t.string   "drink_type"

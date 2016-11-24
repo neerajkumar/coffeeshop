@@ -6,7 +6,8 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  adapter: postgresql
+  database: coffeeshop_development
 
 test:
   <<: *default

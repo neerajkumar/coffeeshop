@@ -10,6 +10,7 @@ gem 'font-awesome-rails'
 gem 'haml-rails'
 
 gem 'enumerize'
+gem 'react_on_rails', "~> 6"
 
 # For pagination
 gem 'kaminari'
