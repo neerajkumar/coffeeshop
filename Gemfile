@@ -21,6 +21,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'spring'
+  gem 'byebug'
 end
 
 group :test do
@@ -30,3 +31,5 @@ end
 group :production do
   gem 'pg'
 end
+
+gem 'mini_racer', platforms: :ruby

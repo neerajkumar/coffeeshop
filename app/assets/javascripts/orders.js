@@ -7,7 +7,7 @@
 
     ajaxOrders();
 
-    $(orderDdl).find('a.menu-item').click(function() {
+    $("[aria-labelledby='order-ddl-menu'] a").click(function() {
       $.when(ajaxNewOrder($(this).data('id'))).then(ajaxOrders(1));
     });
 
@@ -43,7 +43,7 @@
     });
 
     function ajaxNewOrder(item_id) {
-      $.post($(orderDdl).data('url'), {
+      $.post("/orders", {
         id: item_id
       }).done(function(data) {
         data.is_succ ? coffeeshop.showNotice(data.msg) : coffeeshop.showError(data.msg);

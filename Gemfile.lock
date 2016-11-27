@@ -32,6 +32,7 @@ GEM
     arel (5.0.1.20140414130214)
     awesome_print (1.6.1)
     builder (3.2.2)
+    byebug (9.0.6)
     connection_pool (2.2.1)
     diff-lcs (1.2.5)
     enumerize (1.1.1)
@@ -70,10 +71,13 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    libv8 (5.3.332.38.3)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
+    mini_racer (0.1.7)
+      libv8 (~> 5.3)
     minitest (5.8.4)
     multi_json (1.11.2)
     nokogiri (1.6.7.2)
@@ -158,6 +162,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  byebug
   enumerize
   factory_girl_rails
   ffaker
@@ -165,6 +170,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   kaminari
+  mini_racer
   pg
   rails (= 4.1.9)
   react_on_rails (~> 6)

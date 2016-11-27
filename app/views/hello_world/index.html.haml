@@ -1,13 +1,25 @@
+%h1 Hello World
+= react_component("HelloWorldApp", props: @hello_world_props, prerender: false)
 
-=render 'nav'
+
+=render 'orders/nav'
 
 .alert.alert-success.fade.in.text-center.hidden
   %button.close{"data-dismiss" => "alert", type: "button"}=raw "&times;"
   %span
 
-= react_component("MenuApp", props: {items: @items}, prerender: false)
+.panel.panel-info
+  .panel-body
+    #order-ddl.dropdown
+      %button.btn.btn-default.dropdown-toggle#order-ddl-btn{'type' => 'button', 'data-toggle' => 'dropdown'}
+        %i.fa.fa-coffee
+        %span= 'Make a Order'
+        %span.caret
+      %ul.dropdown-menu#order-ddl-menu{'aria-labelledby' => 'order-ddl-btn', 'data-url' => orders_path}
+        - Item.all.find_each do |item|
+          %li
+            %a.menu-item{:href => 'javascript:void(0);', 'data-id' => item.id}= "#{item.drink.name.humanize} - #{item.cup_size.humanize}"
 
-%br
 .panel.panel-primary
   .panel-heading
     %i.fa.fa-list-alt
@@ -30,7 +42,7 @@
           %ul.dropdown-menu#type-ddl-menu{'aria-labelledby' => 'type-ddl-btn'}
             - ['All', 'Coffee', 'Tea'].each do |i|
               %li
-                .menu-item{:href => 'javascript:void(0);'}= i
+                %a.menu-item{:href => 'javascript:void(0);'}= i
       .col-xs-4
         #cup-ddl.dropdown
           %button.btn.btn-default.dropdown-toggle#cup-ddl-btn{'type' => 'button', 'data-toggle' => 'dropdown'}
@@ -42,3 +54,5 @@
               %li
                 %a.menu-item{:href => 'javascript:void(0);'}= i
     #order-data{data: { url: listing_orders_path }}
+
+

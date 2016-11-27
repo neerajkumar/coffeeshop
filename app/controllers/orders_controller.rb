@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
 
   def index
+    @items = Item.includes(:drink).all
+    @items = @items.map(&:as_json)
+    @hello_world_props = { name: "Stranger" }
   end
 
   def listing
