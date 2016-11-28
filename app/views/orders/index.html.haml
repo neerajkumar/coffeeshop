@@ -32,7 +32,7 @@
             - ['All', 'Tall', 'Grande', 'Venti'].each do |i|
               %li
                 %a.menu-item{:href => 'javascript:void(0);'}= i
-    = react_component("OrderListingApp", props: {orders: @orders_hash}, prerender: false)
+    #order-listing= react_component("OrderListingApp", props: {orders: @orders_hash}, prerender: false)
     - if !@orders.blank?
       = paginate @orders
 

@@ -15,6 +15,12 @@ class OrdersController < ApplicationController
 
     @orders_hash = @orders.map(&:as_json) if @orders
 
+    respond_to do |format|
+      format.json do 
+        render json: @orders_hash
+      end
+      format.html {}
+    end
   end
 
   def create
