@@ -3,10 +3,6 @@ class OrdersController < ApplicationController
   def index
     @items = Item.includes(:drink).all
     @items = @items.map(&:as_json)
-    @hello_world_props = { name: "Stranger" }
-  end
-
-  def listing
     drink_type = params[:type]
     cup_size = params[:size]
 
@@ -15,10 +11,10 @@ class OrdersController < ApplicationController
     @orders = @orders.by_cup_size(cup_size) if !cup_size.blank? && cup_size.downcase != 'all'
 
     @total_sales = @orders.inject(0){|sum,x| sum + x.item.price }
-
     @orders = @orders.order(created_at: :desc).page(params[:page]) if @orders
 
-    render layout: false
+    @orders_hash = @orders.map(&:as_json) if @orders
+
   end
 
   def create

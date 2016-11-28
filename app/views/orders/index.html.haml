@@ -1,4 +1,3 @@
-
 =render 'nav'
 
 .alert.alert-success.fade.in.text-center.hidden
@@ -19,18 +18,10 @@
     .row
       .col-xs-4
         %h4
-          %span Total Sales:
-          %span#total-sales -
-      .col-xs-4
-        #type-ddl.dropdown
-          %button.btn.btn-default.dropdown-toggle#type-ddl-btn{'type' => 'button', 'data-toggle' => 'dropdown'}
-            %i.fa.fa-database
-            %span#type-text= 'Group by Type'
-            %span.caret
-          %ul.dropdown-menu#type-ddl-menu{'aria-labelledby' => 'type-ddl-btn'}
-            - ['All', 'Coffee', 'Tea'].each do |i|
-              %li
-                .menu-item{:href => 'javascript:void(0);'}= i
+          %span Total Sales: 
+          %span#total-sales 
+            = format_price(@total_sales)
+      .col-xs-4= react_component("GroupByTypeApp", props: {}, prerender: false)
       .col-xs-4
         #cup-ddl.dropdown
           %button.btn.btn-default.dropdown-toggle#cup-ddl-btn{'type' => 'button', 'data-toggle' => 'dropdown'}
@@ -41,4 +32,8 @@
             - ['All', 'Tall', 'Grande', 'Venti'].each do |i|
               %li
                 %a.menu-item{:href => 'javascript:void(0);'}= i
-    #order-data{data: { url: listing_orders_path }}
+    = react_component("OrderListingApp", props: {orders: @orders_hash}, prerender: false)
+    - if !@orders.blank?
+      = paginate @orders
+
+

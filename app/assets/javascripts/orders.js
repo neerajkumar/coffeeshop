@@ -11,8 +11,8 @@
       $.when(ajaxNewOrder($(this).data('id'))).then(ajaxOrders(1));
     });
 
-    $(typeDdl).find('a.menu-item').click(function() {
-      var drink_type = $(this).text(),
+    $("#type-ddl-btn a").click(function() {
+      var drink_type = $(this).text();
         cur = $(typeDdl).data('q');
       if (!cur || cur != drink_type) {
         $(typeDdl).data('q', drink_type);
