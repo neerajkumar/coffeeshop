@@ -11,16 +11,6 @@
       $.when(ajaxNewOrder($(this).data('id'))).then(ajaxOrders(1));
     });
 
-    $("#type-ddl-btn a").click(function() {
-      var drink_type = $(this).text();
-        cur = $(typeDdl).data('q');
-      if (!cur || cur != drink_type) {
-        $(typeDdl).data('q', drink_type);
-        $('#type-text').text(drink_type);
-        ajaxOrders();
-      }
-    });
-
     $(sizeDdl).find('a.menu-item').click(function() {
       var cup_size = $(this).text(),
         cur = $(sizeDdl).data('q');
