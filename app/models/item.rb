@@ -10,7 +10,8 @@ class Item < ActiveRecord::Base
   	{
   		id: self.id,
   		drink_name: self.drink.name.humanize,
-  		cup_size: self.cup_size.humanize
+  		cup_size: self.cup_size.humanize,
+  		price: (self.price / 100)
   	}
   end
 end

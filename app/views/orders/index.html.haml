@@ -4,10 +4,8 @@
   %button.close{"data-dismiss" => "alert", type: "button"}=raw "&times;"
   %span
 
-= react_component("MenuApp", props: {items: @items}, prerender: false)
+= react_component("MenuApp", props: {items: @items, orders: @orders_hash, total_sales: format_price(@total_sales)}, prerender: false)
 
-%br
-= react_component("ItemTableApp", props: {orders: @orders_hash, total_sales: format_price(@total_sales)}, prerender: false)
 - if !@orders.blank?
   = paginate @orders
 

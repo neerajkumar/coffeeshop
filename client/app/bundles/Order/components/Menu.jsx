@@ -12,7 +12,7 @@ const Menu = ({ onSelected, items }) => (
           Make an Order
         </Dropdown.Toggle>        
         <Dropdown.Menu bsStyle="default" title="Make an Order" id="type-ddl-btn" onSelect={ onSelected }>
-          {items.map((item) => <MenuItem data-id={item.id} eventKey={item.id} class="menu-item">{item.drink_name} - {item.cup_size}</MenuItem> )}
+          {items.map((item) => <MenuItem data-id={item.id} eventKey={item} class="menu-item">{item.drink_name} - {item.cup_size}</MenuItem> )}
         </Dropdown.Menu>      
       </Dropdown>
     </div>
