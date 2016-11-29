@@ -5,6 +5,14 @@
       sizeDdl = $('#size-ddl-menu'),
       orderDdl = $('#order-ddl-menu');
 
+    ajaxOrders(coffeeshop.getUrlParams($(this).context.URL).page || 1);
+
+    // Assume response time is 2 second, to protect server overload if keep refreshing.
+    var dAjaxOrders = coffeeshop.debounce(ajaxOrders, 2000, true);
+    $('#refresh-list').click(function() {
+      dAjaxOrders();
+    });
+
     $(orderData).on('click', 'ul.pagination a', function(e) {
       e.preventDefault();
       ajaxOrders(parseInt(coffeeshop.getUrlParams($(this).context.URL).page || 1));
