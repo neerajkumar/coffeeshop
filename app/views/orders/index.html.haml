@@ -7,33 +7,8 @@
 = react_component("MenuApp", props: {items: @items}, prerender: false)
 
 %br
-.panel.panel-primary
-  .panel-heading
-    %i.fa.fa-list-alt
-    %span Order Listing
-    %span.loading-icon
-      =image_tag "ajax-loader.gif"
-    %i.fa.fa-refresh.pull-right#refresh-list{data: {toggle: 'popover', trigger: 'hover', placement: 'top', content: "Refresh"}}
-  .panel-body
-    .row
-      .col-xs-4
-        %h4
-          %span Total Sales: 
-          %span#total-sales 
-            = format_price(@total_sales)
-      .col-xs-4= react_component("GroupByTypeApp", props: {}, prerender: false)
-      .col-xs-4
-        #cup-ddl.dropdown
-          %button.btn.btn-default.dropdown-toggle#cup-ddl-btn{'type' => 'button', 'data-toggle' => 'dropdown'}
-            %i.fa.fa-database
-            %span#size-text= 'Group by Cup'
-            %span.caret
-          %ul.dropdown-menu#size-ddl-menu{'aria-labelledby' => 'cup-ddl-btn'}
-            - ['All', 'Tall', 'Grande', 'Venti'].each do |i|
-              %li
-                %a.menu-item{:href => 'javascript:void(0);'}= i
-    #order-listing= react_component("OrderListingApp", props: {orders: @orders_hash}, prerender: false)
-    - if !@orders.blank?
-      = paginate @orders
+= react_component("ItemTableApp", props: {orders: @orders_hash, total_sales: format_price(@total_sales)}, prerender: false)
+- if !@orders.blank?
+  = paginate @orders
 
 

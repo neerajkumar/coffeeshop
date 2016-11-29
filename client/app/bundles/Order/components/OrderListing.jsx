@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import Table from 'react-bootstrap/lib/Table';
 
-const OrderListing = ({ orders }) => (
+const OrderListing = ({ orders }) => orders.length > 0 ? ( 
   <Table responsive striped condensed>
     <thead>
       <tr>
@@ -25,7 +25,7 @@ const OrderListing = ({ orders }) => (
       )}
     </tbody>
   </Table>
-  );
+  ) : <div></div>
 
 OrderListing.propTypes = {
   // If you have lots of data or action properties, you should consider grouping them by

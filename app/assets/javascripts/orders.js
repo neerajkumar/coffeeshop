@@ -5,42 +5,10 @@
       sizeDdl = $('#size-ddl-menu'),
       orderDdl = $('#order-ddl-menu');
 
-    ajaxOrders();
-
-    $("[aria-labelledby='order-ddl-menu'] a").click(function() {
-      $.when(ajaxNewOrder($(this).data('id'))).then(ajaxOrders(1));
-    });
-
-    $(sizeDdl).find('a.menu-item').click(function() {
-      var cup_size = $(this).text(),
-        cur = $(sizeDdl).data('q');
-      if (!cur || cur != cup_size) {
-        $(sizeDdl).data('q', cup_size);
-        $('#size-text').text(cup_size);
-        ajaxOrders();
-      }
-    });
-
-    // Assume response time is 2 second, to protect server overload if keep refreshing.
-    var dAjaxOrders = coffeeshop.debounce(ajaxOrders, 2000, true);
-    $('#refresh-list').click(function() {
-      dAjaxOrders();
-    });
-
     $(orderData).on('click', 'ul.pagination a', function(e) {
       e.preventDefault();
-      ajaxOrders(parseInt(coffeeshop.getUrlParams($(this).attr('href')).page || 1));
+      ajaxOrders(parseInt(coffeeshop.getUrlParams($(this).context.URL).page || 1));
     });
-
-    function ajaxNewOrder(item_id) {
-      $.post("/orders", {
-        id: item_id
-      }).done(function(data) {
-        data.is_succ ? coffeeshop.showNotice(data.msg) : coffeeshop.showError(data.msg);
-      }).fail(function() {
-        coffeeshop.showError('Order fail created!');
-      });
-    }
 
     function ajaxOrders(page) {
       var page = (page || 1),

@@ -3,22 +3,22 @@ import Dropdown from 'react-bootstrap/lib/Dropdown';
 import DropdownMenu from 'react-bootstrap/lib/DropdownMenu';
 import MenuItem from 'react-bootstrap/lib/MenuItem';
 
-const GroupByType = ({ onTypeSelected }) => (
+const GroupByCup = ({ onCupSelected }) => (
   <div class="col-xs-4">
     <div class="dropdown" id="type-ddl">
       <Dropdown id="dropdown-custom-1">
         <Dropdown.Toggle>
           <i className="fa fa-database fa-fw"></i>
-          Group By Type
+          Group By Cup
         </Dropdown.Toggle>        
-        <Dropdown.Menu bsStyle={"default".toLowerCase()} title="Group by Type" id="type-ddl-btn" onSelect={ onTypeSelected }>
-          {['All', 'Coffee', 'Tea'].map((group_type) => <MenuItem data-id={group_type} eventKey={group_type} class="group-by-type">{group_type}</MenuItem> )}
+        <Dropdown.Menu bsStyle={"default".toLowerCase()} title="Group by Type" id="type-ddl-btn" onSelect={ onCupSelected }>
+          {['All', 'Tall', 'Grande', 'Venti'].map((cup) => <MenuItem data-id={cup} eventKey={cup} class="group-by-type">{cup}</MenuItem> )}
         </Dropdown.Menu>      
       </Dropdown>
     </div>
   </div>
 );
 
-GroupByType.propTypes = {};
+GroupByCup.propTypes = {};
 
-export default GroupByType;
+export default GroupByCup;

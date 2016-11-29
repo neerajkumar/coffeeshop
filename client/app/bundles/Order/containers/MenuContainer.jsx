@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import Menu from '../components/Menu';
 
+
 // Simple example of a React "smart" component
 export default class MenuContainer extends React.Component {
   static propTypes = {
@@ -12,14 +13,33 @@ export default class MenuContainer extends React.Component {
 
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = { items: this.props.items };
+    this.state = { items: this.props.items || [] };
+    this.onSelected = this.onSelected.bind(this);
   }
 
-  // updateName = (name) => { this.setState({ name }); };
+  onSelected(e) {
+    console.log(e);
+    $.ajax({
+      url: "/orders",
+      method: "POST",
+      dataType: 'json',
+      data: {id: e},
+      cache: false,
+      success: function() {
+        console.log("success")
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.log("error");
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  }
 
   render() {
     return (
-      <Menu items={this.state.items} />
+      <div>
+        <Menu onSelected={this.onSelected} items={this.state.items} />
+      </div>
     );
   }
 }

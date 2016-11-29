@@ -23,13 +23,13 @@ body {
   }
 }
 
-.panel-heading{
+#panel-heading{
   font-size: 20px;
-  .loading-icon img{
+  #loading-icon img{
     width: 20px;
     height: 20px;
   }
-  .fa-refresh{
+  #fa-refresh{
     margin-top: 5px;
     cursor: pointer;
   }
