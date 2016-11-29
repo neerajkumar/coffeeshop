@@ -20,12 +20,14 @@ Menu of a coffee shop:
 | Hot Tea    |   -  | 1.95   | -    |
 
 Please code a simple app for this coffeeshop. The coffee shop requirements:
+
 1. Adding orders
 2. Keep track of all orders (total sales)
 3. Group orders by type of orders (coffee or tea)
 4. Group orders by type of size (tall, grande or venti)
 
 Additional questions:
+
 1. What if we want a new type of coffee, a new type of tea?
 2. What if we want a new size?
 3. How would you change the model to add hot/cold options?
