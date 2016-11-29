@@ -3,7 +3,7 @@
 # Mini Coffee Shop for demo RoR
 
 
-This mini project is created for demo RoR. [Click me to have a try](https://fathomless-savannah-94343.herokuapp.com/)
+This mini project is created for demo RoR. [Click me to have a try](https://mini-coffeeshop.herokuapp.com/)
 
 ### Requirements
 
@@ -19,16 +19,29 @@ Menu of a coffee shop:
 | Green Tea  | 3.45 | 4.25   | 4.45 |
 | Hot Tea    |   -  | 1.95   | -    |
 
-0. Adding orders
-1. Keep track of all orders (total sales)
-2. Group orders by type of orders (coffee or tea)
-3. Group orders by type of size (tall, grande or venti)
+Please code a simple app for this coffeeshop. The coffee shop requirements:
+0) Adding orders
+1) Keep track of all orders (total sales)
+2) Group orders by type of orders (coffee or tea)
+3) Group orders by type of size (tall, grande or venti)
+
+Additional questions:
+0) What if we want a new type of coffee, a new type of tea?
+1) What if we want a new size?
+2) How would you change the model to add hot/cold options?
+3) (optional) How would you change the model to support adding condiments to drinks (perl, grass jelly,...)
+
+You're free to use whatever database you feel like.
++/ You are free to choose any server side technologies for the API. Using nodejs is a plus.
++/ Using polymer or reactJS as a library for the view components. Feel free to apply any other JS frameworks. Polymer is a big plus as we are using Polymer now.
++/ Tests are recommended and bonus points if you can deploy it to Heroku. When you're done, please post your code to GitHub or Bitbucket along with a detailed Readme.
++/ Good UI/UX is a another plus.
+
 
 ### MockUp Layer Design
 
 ---------------------------------
 
-This one single page mockup will design as below (Draw by [Balsamiq](https://balsamiq.com/products/mockups/)).
 
 ![MockUp Design](http://ww2.sinaimg.cn/large/5ed3c1c2gw1f1e10xblabj20dp0d9ack.jpg)
 
@@ -47,7 +60,7 @@ This one single page mockup will design as below (Draw by [Balsamiq](https://bal
 
 ---------------------------------
 
-[Font Awesome](https://fortawesome.github.io/Font-Awesome/) + [Bootstrap](http://getbootstrap.com/) + [jQuery](https://jquery.com/) + [Rails](http://rubyonrails.org/)+ [Postgresql](http://www.postgresql.org/) + [Heroku](https://www.heroku.com/) (Host)
+[Font Awesome](https://fortawesome.github.io/Font-Awesome/) + [ReactJs](https://facebook.github.io/react/) + [React on Rails](https://github.com/shakacode/react_on_rails) + [React Bootstrap](https://react-bootstrap.github.io) + [jQuery](https://jquery.com/) + [Rails](http://rubyonrails.org/)+ [Postgresql](http://www.postgresql.org/) + [Heroku](https://www.heroku.com/) (Host)
 
 | HTTP Verb | Path | Controller#Action |
 | ----------| ---- | ----------------- |
