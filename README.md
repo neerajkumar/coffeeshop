@@ -20,22 +20,22 @@ Menu of a coffee shop:
 | Hot Tea    |   -  | 1.95   | -    |
 
 Please code a simple app for this coffeeshop. The coffee shop requirements:
-0) Adding orders
-1) Keep track of all orders (total sales)
-2) Group orders by type of orders (coffee or tea)
-3) Group orders by type of size (tall, grande or venti)
+1. Adding orders
+2. Keep track of all orders (total sales)
+3. Group orders by type of orders (coffee or tea)
+4. Group orders by type of size (tall, grande or venti)
 
 Additional questions:
-0) What if we want a new type of coffee, a new type of tea?
-1) What if we want a new size?
-2) How would you change the model to add hot/cold options?
-3) (optional) How would you change the model to support adding condiments to drinks (perl, grass jelly,...)
+1. What if we want a new type of coffee, a new type of tea?
+2. What if we want a new size?
+3. How would you change the model to add hot/cold options?
+4. (optional) How would you change the model to support adding condiments to drinks (perl, grass jelly,...)
 
 You're free to use whatever database you feel like.
-+/ You are free to choose any server side technologies for the API. Using nodejs is a plus.
-+/ Using polymer or reactJS as a library for the view components. Feel free to apply any other JS frameworks. Polymer is a big plus as we are using Polymer now.
-+/ Tests are recommended and bonus points if you can deploy it to Heroku. When you're done, please post your code to GitHub or Bitbucket along with a detailed Readme.
-+/ Good UI/UX is a another plus.
+* You are free to choose any server side technologies for the API. Using nodejs is a plus.
+* Using polymer or reactJS as a library for the view components. Feel free to apply any other JS frameworks. Polymer is a big plus as we are using Polymer now.
+* Tests are recommended and bonus points if you can deploy it to Heroku. When you're done, please post your code to GitHub or Bitbucket along with a detailed Readme.
+* Good UI/UX is a another plus.
 
 
 ### MockUp Layer Design
@@ -64,7 +64,6 @@ You're free to use whatever database you feel like.
 
 | HTTP Verb | Path | Controller#Action |
 | ----------| ---- | ----------------- |
-| GET       | /orders/listing | orders#listing |
 | GET      | /orders  | orders#index |
 | POST | /orders | orders#create |
 | GET  | / | orders#index |
